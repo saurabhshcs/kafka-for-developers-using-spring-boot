@@ -15,7 +15,7 @@ keytool -keystore server.keystore.jks -alias localhost -validity 365 -genkey -ke
 - After entering all the details the final value will look like below.
 
 ```
-CN=localhost, OU=localhost, O=localhost, L=Chennai, ST=TN, C=IN
+CN=localhost, OU=localhost, O=localhost, L=London, ST=MIDDLESEX, C=UK
 ```
 
 ## Generating CA
@@ -78,7 +78,7 @@ ssl.endpoint.identification.algorithm=
 - Create a topic
 
 ```
-./kafka-topics.sh --create --topic test-topic -zookeeper localhost:2181 --replication-factor 1 --partitions 3
+./kafka-topics.sh --create --topic first-topic-hello-world -zookeeper localhost:2181 --replication-factor 1 --partitions 3
 ```
 
 - Create a file named **client-ssl.properties** and have the below properties configured in there.
@@ -95,7 +95,7 @@ ssl.truststore.type=JKS
 - Command to Produce Messages to the secured topic
 
 ```
-./kafka-console-producer.sh --broker-list localhost:9095,localhost:9096,localhost:9097 --topic test-topic --producer.config client-ssl.properties
+./kafka-console-producer.sh --broker-list localhost:9095,localhost:9096,localhost:9097 --topic first-topic-hello-world --producer.config client-ssl.properties
 ```
 
 ## Consuming Messages from a Secured Topic
@@ -103,21 +103,21 @@ ssl.truststore.type=JKS
 - Command to Produce Messages to the secured topic
 
 ```
-./kafka-console-consumer.sh --bootstrap-server localhost:9095,localhost:9096,localhost:9097 --topic test-topic --consumer.config client-ssl.properties
+./kafka-console-consumer.sh --bootstrap-server localhost:9095,localhost:9096,localhost:9097 --topic first-topic-hello-world --consumer.config client-ssl.properties
 ```
 
 
 ## Producing Messages to Non-Secured Topic
 
 ```
-./kafka-console-producer.sh --broker-list localhost:9092,localhost:9093,localhost:9094 --topic test-topic
+./kafka-console-producer.sh --broker-list localhost:9092,localhost:9093,localhost:9094 --topic first-topic-hello-world
 ```
 
 
 ## Consuming Messages from a Non-Secured Topic
 
 ```
-./kafka-console-consumer.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic test-topic
+./kafka-console-consumer.sh --bootstrap-server localhost:9092,localhost:9093,localhost:9094 --topic first-topic-hello-world
 ```
 
 ## 2 Way Authentication
