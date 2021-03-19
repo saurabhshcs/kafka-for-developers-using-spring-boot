@@ -137,7 +137,7 @@ kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test-topic 
 
 - We need to modify three properties to start up a multi broker set up.
 
-```
+```properties
 broker.id=<unique-broker-d>
 listeners=PLAINTEXT://localhost:<unique-port>
 log.dirs=/tmp/<unique-kafka-folder>
@@ -146,7 +146,7 @@ auto.create.topics.enable=false
 
 - Example config will be like below.
 
-```
+```properties
 broker.id=1
 listeners=PLAINTEXT://localhost:9093
 log.dirs=/tmp/kafka-logs-1
@@ -284,3 +284,6 @@ kafka-run-class.bat kafka.tools.DumpLogSegments --deep-iteration --files /tmp/ka
 ```
 </p>
 </details>
+
+Follow me on - [Medium](https://saurabhshcs.medium.com) | [Linkedin](https://www.linkedin.com/in/saurabhshcs/) | [YouTube](https://www.youtube.com/channel/UCSQqjPw7_tfx1Ie4yYHbcxQ?pbjreload=102) | [StackOverFlow](https://stackoverflow.com/users/10719720/saurabhshcs?tab=profile)
+
