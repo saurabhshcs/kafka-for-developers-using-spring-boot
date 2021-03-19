@@ -67,7 +67,7 @@ keytool -keystore client.truststore.jks -alias CARoot -import -file ca-cert
 
 ## Broker SSL Settings
 
-```
+```properties
 ssl.keystore.location=<location>/server.keystore.jks
 ssl.keystore.password=password
 ssl.key.password=password
@@ -83,7 +83,7 @@ ssl.endpoint.identification.algorithm=
 
 - Create a file named **client-ssl.properties** and have the below properties configured in there.
 
-```
+```properties
 security.protocol=SSL
 ssl.truststore.location=<location>/client.truststore.jks
 ssl.truststore.password=password
@@ -130,16 +130,19 @@ keytool -keystore server.truststore.jks -alias CARoot -import -file ca-cert
 
 - Add the **ssl.client.auth** property in the **server.properties**.
 
-```
+```properties
 ssl.truststore.location=<location>/server.truststore.jks
 ssl.truststore.password=password
 ssl.client.auth=required
 ```
 - Kafka Client should have the following the config in the **client-ssl.properties** file
 
-```
+```properties
 ssl.keystore.type=JKS
 ssl.keystore.location=<location>/client.keystore.jks
 ssl.keystore.password=password
 ssl.key.password=password
 ```
+
+Follow me on - [Medium](https://saurabhshcs.medium.com) | [Linkedin](https://www.linkedin.com/in/saurabhshcs/) | [YouTube](https://www.youtube.com/channel/UCSQqjPw7_tfx1Ie4yYHbcxQ?pbjreload=102) | [StackOverFlow](https://stackoverflow.com/users/10719720/saurabhshcs?tab=profile)
+
